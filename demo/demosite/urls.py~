@@ -7,8 +7,6 @@ from django.conf.urls import include, patterns, url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from wiki.urls import get_pattern as get_wiki_pattern
-from django_nyt.urls import get_pattern as get_nyt_pattern
 
 admin.autodiscover()
 
@@ -20,6 +18,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),  # NOQA
+    url(r'^wiki/', include('wiki.urls', namespace='wiki')),
     url(r'^', include('cms.urls')),
 )
 
@@ -31,9 +30,3 @@ if settings.DEBUG:
         ) + staticfiles_urlpatterns() + urlpatterns  # NOQA
 
 
-
-
-urlpatterns += [
-    url(r'^notifications/', get_nyt_pattern()),
-    url(r'^wiki/', get_wiki_pattern())
-]
