@@ -4,17 +4,10 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import python_2_unicode_compatible
 
-RANK_CHOICES = (
-    (1, "Kingdom"),
-    (2, "Phylum"),
-    (3, "Class"),
-    (4, "Order"),
-    (5, "Family"),
-    (5, "Genus"),
-    (5, "Species"),
-)
+#RANK_CHOICES = ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species"]
+#CATEGORY_CHOICES = ["Type Strain","Valid", "Invalid", "Candidatus"]
 
-CATEGORY_CHOICES = ["Type Strain","Valid", "Invalid", "Candidatus"]
+
 
 #@python_2_unicode_compatible
 #class Category(models.Model):
@@ -25,9 +18,10 @@ CATEGORY_CHOICES = ["Type Strain","Valid", "Invalid", "Candidatus"]
 
 @python_2_unicode_compatible
 class Taxon(models.Model):
+    RANK_CHOICES = [(1,"Kingdom"), (2,"Phylum"), (3,"Class"), (4,"Order"), (5,"Family"), (6,"Genus"), (7,"Species")]
+
     name = models.CharField(_("Name"), max_length=255)
-    rank = models.CharField(choices=RANK_CHOICES, max_length=15)
-#    category = models.CharField(choices=CATEGORY_CHOICES)
+    rank = models.SmallIntegerField(choices=RANK_CHOICES)
  #   category = models.ForeignKey(Category, on_delete=models.CASCADE)
    
     def __str__(self):
@@ -46,8 +40,16 @@ class Typestrain(models.Model):
     dsm_num = models.CharField(_("DSM Number"), max_length=15)
     seq_id = models.CharField(_("Sequence ID Number"), max_length=100)
     category_abbrv = models.CharField(_("Category Abbreviation"), max_length=100)
+
+    def __unicode__(self):
+        return unicode(self.taxon)
+
     def __str__(self):
-        return self.taxon
+        return str(self.taxon)
+
+
+#    def __str__(self):
+#        return self.taxon
 
 
 @python_2_unicode_compatible
@@ -64,8 +66,10 @@ class Valid(models.Model):
     seq_id = models.CharField(_("Sequence ID Number"), max_length=100)
 
     def __str__(self):
-        return self.name
+        return str(self.taxon)
 
+    def __unicode__(self):
+        return unicode(self.taxon)
 
 
 

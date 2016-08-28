@@ -1,32 +1,54 @@
-"""demo URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.8/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Add an import:  from blog import urls as blog_urls
-    2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
-"""
 # -*- coding: UTF-8 -*-
-from __future__ import unicode_literals
-#from django.conf.urls import patterns, url
-from django.conf.urls import include, url
+from django.conf.urls import patterns, include, url
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
+from django.core.urlresolvers import reverse_lazy
+from django.utils.translation import string_concat
+from django.utils.translation import ugettext_lazy as _
+from django.conf.urls.i18n import i18n_patterns
 
-from browser.views import TaxonListView
+from crispy_forms.helper import FormHelper
+from crispy_forms import layout, bootstrap
+
+from haystack.views import SearchView
 
 
-urlpatterns = [
-    #url(r'^admin/', include(admin.site.urls)),
-    url(r'^admin/', admin.site.urls),
+class CrispySearchView(SearchView):
+    def extra_context(self):
+        helper = FormHelper()
+        helper.form_tag = False
+        helper.disable_csrf = True
+        return {"search_helper": helper}
+
+admin.autodiscover()
+
+login_helper = FormHelper()
+login_helper.form_action = reverse_lazy("my_login_page")
+login_helper.form_method = "POST"
+login_helper.form_class = "form-signin"
+login_helper.html5_required = True
+
+login_helper.layout = layout.Layout(
+    layout.HTML(string_concat("""<h2 class="form-signin-heading">""", _("Please Sign In"), """</h2>""")),
+    layout.Field("username", placeholder=_("username")),
+    layout.Field("password", placeholder=_("password")),
+    layout.HTML("""<input type="hidden" name="next" value="{{ next }}" />"""),
+    layout.Submit("submit", _("Login"), css_class="btn-lg"),
+)
+
+
+urlpatterns = i18n_patterns('',
+    url(r'login/$', 'django.contrib.auth.views.login', {'extra_context': {'login_helper': login_helper}}, name="my_login_page"),
+    #url(r'^email-messages/', include("email_messages.urls")),
+    #url(r'^quotes/', include("quotes.urls")),
+    #url(r'^bulletin-board/', include("bulletin_board.urls")),
     url(r'^browser/', include("browser.urls")),
-    url(r'^$', TaxonListView.as_view(), name="taxon_list"),
-]
+#    url(r'^cv/', include("cv.urls")),
+    url(r'^search/$', CrispySearchView(), name='haystack_search'),
+    url(r'^admin/', include(admin.site.urls)),
+)
 
-
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

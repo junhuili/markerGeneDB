@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import View
 
 
-from .models import Typestrain, Valid
+from .models import Typestrain, Valid, Taxon
 from .forms import TaxonFilterForm
 
 
