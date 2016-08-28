@@ -1,0 +1,5 @@
+Acinetobacter baumannii
+Actinomyces odontolyticus
+Bacillus cereus
+Bacteroides vulgatus
+Clostridium beijerinckii

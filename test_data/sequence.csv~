@@ -1,0 +1,6 @@
+sequence_id integer PRIMARY_KEY,        correct_name varchar, rank varchar,        ncbi_name varchar, ncbi_acc,  timestamp text
+1,Acinetobacter baumannii,species,Acinetobacter baumannii,HE651907
+2,Actinomyces odontolyticus,species,Actinomyces odontolyticus,AJ234040
+3,Bacillus cereus,species,Bacillus cereus,AE016877
+4,Bacteroides vulgatus,species,Bacteroides vulgatus,AJ867050
+5,Clostridium beijerinckii,species,Clostridium beijerinckii,X68179

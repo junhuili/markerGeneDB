@@ -1,0 +1,52 @@
+1,Bacteria,Domain,0,0,0,0
+2,Archaea,Domain,0,0,0,0
+3,Actinobacteria,Phylum,1,0,0,0
+4,Bacteroidetes,Phylum,1,0,0,0
+5,Cyanobacteria,Phylum,1,0,0,0
+6,Firmicutes,Phylum,1,0,0,0
+7,Proteobacteria,Phylum,1,0,0,0
+8,Thaumarchaeota,Phylum,2,0,0,0
+9,Tenericutes,Phylum,1,0,0,0
+10,Actinobacteria,Class,3,0,0,0
+11,Bacilli,Class,6,0,0,0
+12,Bacteroidia,Class,4,0,0,0
+13,Clostridia,Class,6,0,0,0
+14,Cyanophyceae,Class,5,0,0,0
+15,Gammaproteobacteria,Class,7,0,0,0
+16,Mollicutes,Class,9,0,0,0
+17,Actinomycetales,Order,10,0,0,0
+18,Bacillales,Order,11,0,0,0
+19,Bacteroidales,Order,12,0,0,0
+20,Clostridiale,Order,13,0,0,0
+21,Nitrosopumilales,Order,8,0,0,0
+22,Pseudomonadales,Order,15,0,0,0
+23,Synechococcales,Order,14,0,0,0
+24,Thiotrichales,Order,15,0,0,0
+25,Actinomycetaceae,Family,17,0,0,0
+26,Bacillaceae,Family,18,0,0,0
+27,Bacteroidaceae,Family,19,0,0,0
+28,Acaryochloridaceae,Family,23,0,0,0
+29,Clostridiaceae,Family,20,0,0,0
+30,Moraxellaceae,Family,22,0,0,0
+31,Nitrosopumilaceae,Family,21,0,0,0
+32,Francisellaceae,Family,24,0,0,0
+33,Mycoplasmataceae,Family,16,0,0,0
+34,Acaryochloris,Genus,28,0,0,0
+35,Acinetobacter,Genus,30,0,0,0
+36,Actinomyces,Genus,25,0,0,0
+37,Bacillus,Genus,26,0,0,0
+38,Bacteroides,Genus,27,0,0,0
+39,Clostridium,Genus,29,0,0,0
+40,Candidatus Nitrosoarchaeum,Genus,31,0,0,0
+41,Candidatus Nebulobacter,Genus,32,0,0,0
+42,Mycoplasma,Genus,33,0,0,0
+43,Acaryochloris bahamiensis,Species,34,0,0,0
+44,Acinetobacter baumannii,Species,35,0,0,1
+45,Actinomyces odontolyticus,Species,36,0,0,1
+46,Bacillus cereus,Species,37,0,0,1
+47,Bacteroides vulgatus,Species,38,0,0,1
+48,Candidatus Nitrosoarchaeum koreensis,Species,40,0,0,0
+49,Clostridium beijerinckii,Species,39,0,0,1
+50,Candidatus Nebulobacter yamunensis,Species,41,0,0,0
+51,Candidatus Mycoplasma haemovis,Species,42,0,0,0
+52,Candidatus Mycoplasma ravipulmonis,Species,43,0,0,0

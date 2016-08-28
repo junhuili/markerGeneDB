@@ -1,0 +1,21 @@
+"Abiotrophiapara-adiacens" Kanamoto et al., sp. nov. 
+Proposed type strain: strain . 
+Reference: KANAMOTO (T.), SATO (S.) and INOUE (M.): Genetic heterogeneities and phenotypic characteristics of strains of the genus Abiotrophia and proposal of Abiotrophia para-adiacens sp. nov. J. Clin. Microbiol., 2000, 38, 492-498. Effective publication Online
+
+"Acetobacter carbinolicum subsp. kysingense" Paarup et al., subsp. nov. 
+Proposed type strain: strain SyrA5 = DSM 16427 = ATCC BAA-990. 
+Reference: PAARUP (M.)., FRIEDRICH (M.W.), TINDALL (B.J.) and FINSTER (K.): Characterization of the psychrotolerant acetogen strain SyrA5 and the emended description of the species Acetobacterium carbinolicum. Antonie van Leeuwenhoek, 2006, 89, 55-69. Effective publication Online
+
+"Acetobacter xylinum subsp. nonacetoxidans" Kojima et al., subsp. nov. 
+Proposed type strain: strain BPR 2002 = JCM 10150. 
+Reference: KOJIMA (Y.), TONOUCHI (N.), TSUCHIDA (T.), YOSHINAGA (F.) and YAMADA (Y.): The characterization of acetic acid bacteria efficiently producing bacterial cellulose from sucrose: The proposal of Acetobacter xylinum subsp. nonacetoxidans subsp. nov. Bioscience Biotechnology and Biochemistry, 1998, 62, 185-187.
+
+"Acetobacterium psammolithicum" Krumholz et al., sp. nov. 
+Proposed type strain: strain CN-E = SMCC/W 751. 
+Reference: KRUMHOLZ (L.R.), HARRIS (S.H.), TAY (S.T.) and SUFLITA (J.M.): Characterization of two subsurface H2-utilizing bacteria, Desulfomicrobium hypogeium sp. nov. and Acetobacterium psammolithicum sp. nov., and their ecological roles. Appl. Environ. Microbiol., 1999, 65, 2300-2306. Effective publication Online
+
+"Achromobacter cobalamini" Shteinberg et al., sp. nov. 
+Proposed type strain: strain . 
+Reference: SHTEINBERG (B.I.), GEBGARDT (A.G.) and DATSIUK (N.M.): Possible reason for growth inhibition of Achromobacter cobalamini sp. nov. growing on molasses medi (in Russian). Mikrobiol. Zh.,1982, 44, 18-22.
+
+

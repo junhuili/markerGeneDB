@@ -1,0 +1,46 @@
+Name: 	Acinetobacter baumannii
+Authors: 	Bouvet and Grimont 1986
+Status: 	sp. nov. (VP)
+Reference: 	Int. J. Syst. Bacteriol. 36:239* [Literature]
+Type strain: 	ATCC 19606,CIP 70.34,DSM 30007
+Synonym(s): 	
+If one of the synonyms is linked this will take you to the correct name used by the DSMZ
+more information: 	LPSN (J.P. Euzéby/A.C. Parte)
+
+Name: 	Actinomyces odontolyticus
+Authors: 	Batty 1958
+Status: 	species (AL)
+Reference: 	Int. J. Syst. Bacteriol. 30:243 (AL) [Literature]
+Type strain: 	ATCC 17929,DSM 43760,DSM 19120
+Synonym(s): 	
+If one of the synonyms is linked this will take you to the correct name used by the DSMZ
+more information: 	LPSN (J.P. Euzéby/A.C. Parte)
+
+
+Name: 	Bacillus cereus
+Authors: 	Frankland and Frankland 1887
+Status: 	species (AL)
+Reference: 	Int. J. Syst. Bacteriol. 30:256 (AL) [Literature]
+Type strain: 	ATCC 14579,CCM 2010,DSM 31,NCIB 9373,NCTC 2599
+Synonym(s): 	"Bacillus medusa"
+
+If one of the synonyms is linked this will take you to the correct name used by the DSMZ
+more information: 	LPSN (J.P. Euzéby/A.C. Parte)
+
+Name: 	Bacteroides vulgatus
+Authors: 	Eggerth and Gagnon 1933
+Status: 	species (AL)
+Reference: 	Int. J. Syst. Bacteriol. 30:261 (AL) [Literature]
+Type strain: 	8482,ATCC 8482,DSM 1447
+Synonym(s): 	
+If one of the synonyms is linked this will take you to the correct name used by the DSMZ
+more information: 	LPSN (J.P. Euzéby/A.C. Parte)
+
+Name: 	Clostridium beijerinckii
+Authors: 	Donker 1926 emend. Keis et al. 2001
+Status: 	species (AL)
+Reference: 	Int. J. Syst. Bacteriol. 30:277 (AL) [Literature]
+Type strain: 	ATCC 25752,DSM 791,NCIB 9362
+Synonym(s): 	
+If one of the synonyms is linked this will take you to the correct name used by the DSMZ
+more information: 	LPSN (J.P. Euzéby/A.C. Parte)

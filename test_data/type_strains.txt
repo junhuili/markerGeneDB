@@ -1,0 +1,8 @@
+Acinetobacter baumannii,19606,30007,1,VP
+Actinomyces odontolyticus,17929,19120,2,AL
+Bacillus cereus,14579,31,3,AL
+Bacteroides vulgatus,8482,1447,4,AL
+Clostridium beijerinckii,25752,791,5,AL
+
+
+

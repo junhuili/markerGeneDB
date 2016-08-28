@@ -1,0 +1,63 @@
+# App: Browser
+
+## Models
+
+* Type Strains
+** species_name varchar PRIMARY_KEY,
+** atcc_num integer,
+** dsm_num integer,
+** sequence_id integer,
+** category_abbrv varchar
+
+* Valid Names
+** correct_name varchar PRIMARY_KEY,
+** rank varchar,
+** category_abbrv varchar,
+** sequence_id integer
+
+Invalid
+** unique_name varchar PRIMARY_KEY,
+** rank varchar,
+** reference_url,
+** last_update text
+
+Synonyms
+** correct_name varchar PRIMARY_KEY,
+** rank varchar,
+** synonym_name varchar
+
+Candidatus
+** unique_name varchar PRIMARY_KEY,
+** rank varchar,
+** sequence_id integer,
+** last_update text
+
+* Literature
+** name varchar PRIMARY_KEY,
+** category_abbrv varchar,
+** category_name varchar,
+** authors text,
+** literature text,
+** sequence_id,
+** timestamp text        
+
+Sequence
+** sequence_id integer PRIMARY_KEY,
+** unique_name varchar,
+** rank varchar,
+** ncbi_name varchar,
+** ncbi_acc varchar,
+** nuc_sequence text,
+** timestamp text
+
+## Tree
+** node_id integer PRIMARY_KEY,
+** name varchar,
+** rank varchar,
+** parent_node_id integer,
+** distance_to_parent integer,
+** confidence integer,
+** is_type_strain integer
+
+
+

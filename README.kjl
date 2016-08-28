@@ -1,3 +1,30 @@
+# Site Overview
+
+* Nomenclature:
+** Lists (ch. 3:)
+*** Valid names
+*** Invalid names
+*** Type strains
+*** Candidatus
+* Tree (ch. 8)
+** make collapsible?
+
+# Django project organization
+
+* Valid 
+
+# Future
+
+* Importing data (ch. 9)
+** uptodate api 
+*** Import to db from json
+* Api support (ch. 9)
+** Rest
+
+
+# NOTES
+
+
 # Create cms project
 
 mkdir tutorial-project
@@ -34,4 +61,6 @@ http://django-cms.readthedocs.io/en/latest/introduction/plugins.html
 
 Apphoocks
 http://django-cms.readthedocs.io/en/latest/introduction/apphooks.html
+
+
 
