@@ -26,8 +26,8 @@ CATEGORY_CHOICES = ["Type Strain","Valid", "Invalid", "Candidatus"]
 @python_2_unicode_compatible
 class Taxon(models.Model):
     name = models.CharField(_("Name"), max_length=255)
-    rank = models.CharField(choices=RANK_CHOICES)
-    category = models.CharField(choices=CATEGORY_CHOICES)
+    rank = models.CharField(choices=RANK_CHOICES, max_length=15)
+#    category = models.CharField(choices=CATEGORY_CHOICES)
  #   category = models.ForeignKey(Category, on_delete=models.CASCADE)
    
     def __str__(self):
@@ -48,7 +48,6 @@ class Typestrain(models.Model):
     category_abbrv = models.CharField(_("Category Abbreviation"), max_length=100)
     def __str__(self):
         return self.taxon
-
 
 
 @python_2_unicode_compatible

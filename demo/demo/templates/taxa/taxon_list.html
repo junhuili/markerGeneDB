@@ -1,0 +1,82 @@
+{% extends "base_two_columns.html" %}
+{% load i18n utility_tags %}
+
+{% block sidebar %}
+<div class="filters panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTypestrains">
+                    {% trans "Filter by Typestrain" %}
+                </a>
+            </h6>
+        </div>
+        <div id="collapseTypestrains" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="list-group">
+                    <a class="list-group-item{% if not facets.selected.typestrain %} active{% endif %}" href="{% modify_query "typestrain" "page" %}">{% trans "All" %}</a>
+                    {% for cat in facets.categories.typestrains %}
+                        <a class="list-group-item{% if facets.selected.typestrain == cat %} active{% endif %}" href="{% modify_query "page" typestrain=cat.pk %}">{{ cat }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseValid">
+                    {% trans "Filter by Valid" %}
+                </a>
+            </h6>
+        </div>
+        <div id="collapseValid" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="list-group">
+                    <a class="list-group-item{% if not facets.selected.valid %} active{% endif %}" href="{% modify_query "valid" "page" %}">{% trans "All" %}</a>
+                    {% for cat in facets.categories.valids %}
+                        <a class="list-group-item{% if facets.selected.valid == cat %} active{% endif %}" href="{% modify_query "page" valid=cat.pk %}">{{ cat }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="taxon_list">
+    {% for taxon in object_list %}
+        <div class="taxon alert alert-info">
+            <p>{{ taxon.name }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% if object_list.has_other_pages %}
+    <ul class="pagination">
+        {% if object_list.has_previous %}
+            <li><a href="{% modify_query page=object_list.previous_page_number %}">&laquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+        {% endif %}
+        {% for page_number in object_list.paginator.page_range %}
+            {% if page_number == object_list.number %}
+                <li class="active">
+                    <span>{{ page_number }} <span class="sr-only">(current)</span></span>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% modify_query page=page_number %}">{{ page_number }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% if object_list.has_next %}
+            <li><a href="{% modify_query page=object_list.next_page_number %}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+{% endblock %}

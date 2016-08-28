@@ -1,0 +1,60 @@
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
+from django.shortcuts import render
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.generic import View
+
+
+from .models import Typestrain, Valid
+from .forms import TaxonFilterForm
+
+
+def taxon_list(request):
+    paginate_by = 15
+    qs = Taxon.objects.order_by("name")
+    
+    form = TaxonFilterForm(data=request.GET)
+
+    facets = {
+        "selected": {},
+        "categories": {
+            "typestrain": Typestrain.objects.all(),
+            "valid": Valid.objects.all(),
+        },
+    }
+
+    if form.is_valid():
+        typestrain = form.cleaned_data["typestrain"]
+        if typestrain:
+            facets["selected"]["typestrain"] = typestrain
+            qs = qs.filter(typestrain=typestrain).distinct()
+
+        valid = form.cleaned_data["valid"]
+        if valid:
+            facets["selected"]["valid"] = valid
+            qs = qs.filter(valid=valid).distinct()
+
+#        if rating:
+#            rating = int(rating)
+#            facets["selected"]["rating"] = (rating, dict(RATING_CHOICES)[rating])
+#            qs = qs.filter(rating=rating).distinct()
+
+    paginator = Paginator(qs, paginate_by)
+
+    page_number = request.GET.get("page")
+    try:
+        page = paginator.page(page_number)
+    except PageNotAnInteger:
+        # If page is not an integer, show first page.
+        page = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range, show last existing page.
+        page = paginator.page(paginator.num_pages)
+
+    context = {
+        "form": form,
+        "facets": facets,
+        "object_list": page,
+    }
+    return render(request, "taxa/taxon_list.html", context)
+

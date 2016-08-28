@@ -13,9 +13,20 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
+#from django.conf.urls import patterns, url
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from browser.views import TaxonListView
+
+
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    #url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
+    url(r'^browser/', include("browser.urls")),
+    url(r'^$', TaxonListView.as_view(), name="taxon_list"),
 ]
+
+
